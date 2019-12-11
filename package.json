@@ -1,0 +1,14 @@
+{
+  "name": "mysql2-timeout",
+  "version": "1.0.0",
+  "description": "Timeout handling repro. code with mysql2.",
+  "main": "timeout.js",
+  "scripts": {
+    "start": "node timeout"
+  },
+  "author": "Ben Botto",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^1.7.0"
+  }
+}

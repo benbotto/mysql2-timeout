@@ -1,0 +1,23 @@
+version: '3'
+services:
+  db:
+    image: percona:5.7
+    ports:
+      - "3311:3306"
+    env_file:
+      - db.env
+    command: --wait-timeout=30
+
+  dev:
+    image: node:dubnium
+    working_dir: /root/dev
+    volumes:
+      - .:/root/dev
+    stdin_open: true
+    tty: true
+    environment:
+      - SHELL=/bin/bash
+    env_file:
+      - db.env
+    depends_on:
+      - "db"
